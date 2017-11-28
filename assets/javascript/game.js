@@ -1,6 +1,18 @@
 // The player will have to guess the answer. This time, though, the player will guess with numbers instead of letters. 
+var targetNumber = 99;
 // Here's how the app works:
 // There will be four crystals displayed as buttons on the page.
+for (var i = 0; i < numberOptions.length; i++) {
+
+
+var imageCrystal = $('<img>');
+imageCrystal.addClass("crystal-image");
+imageCrystal.attr("src", )
+}
+$("#crystal-image").on("click", function() {
+
+}
+
 // The player will be shown a random number at the start of the game.
 // When the player clicks on a crystal, it will add a specific amount of points to the player's total score. 
 // Your game will hide this amount until the player clicks a crystal.
