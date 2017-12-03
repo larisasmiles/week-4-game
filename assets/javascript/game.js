@@ -47,4 +47,55 @@ function randomCrystal() {
   return Math.floor(Math.random() * 12 + 1);
 }
 
+function initializeGame() {
+  winCount = 0;
+  lossCount = 0;
+  score = 0;
+  target = randomNumber();
+  for (i = 0; i < crystalsArray.length; i++) {
+    crystalsArray[i] = randomCrystal();
+    $(".randomNum").html(target);
+    $("#scoreTracker").text(score);
+  }
+  console.log(crystalsArray);
+  $("#blue").on("click", function() {
+    score = score + crystalsArray[0];
+    $("#scoreTracker").text(score);
+    checkScore();  
+  });
+  $("#diamond").on("click", function() {
+    score = score + crystalsArray[1];
+    $("#scoreTracker").text(score);
+    checkScore();  
+  });
+  $("#Emerald_Gem").on("click", function() {
+    score = score + crystalsArray[2];
+    $("#scoreTracker").text(score);
+    checkScore();  
+  });
+  $("#Ruby-stone").on("click", function() {
+    score = score + crystalsArray[3];
+    $("#scoreTracker").text(score);
+    checkScore();  
+  });
+  console.log(score);
+  function checkScore() {
+    if (score === target) {
+      winCount++;
+      alert("You Win!");
+      $("#win_count").text(winCount);
+      initializeGame();
+    } else if (score > target) {
+      alert("You Lose!");
+      lossCount++;
+      $("#losses_count").text(lossCount);
+      initializeGame();
+    }
+  };
+
+  //if totalScore === random number wins++
+  
+  //if totalscore > random number losses++
+  
+  //reset game if win or lose
 
