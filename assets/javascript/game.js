@@ -1,5 +1,10 @@
+// start game 
+$(document).ready(function() {
+  // create global variables... 
+  crystals = ['assets/images/blue.jpeg', 'assets/images/diamond.jpeg', 'assets/images/Emerald_Gem.png', 'assets/images/Ruby-stone.jpg'];
+ 
+}
 // The player will have to guess the answer. This time, though, the player will guess with numbers instead of letters. 
-var targetNumber = 99;
 // There will be four crystals displayed as buttons on the page.
 for (var i = 0; i < numberOptions.length; i++) {
 
@@ -24,3 +29,22 @@ $("#crystal-image").on("click", function() {
 // Option 1 Game design notes
 // The random number shown at the start of the game should be between 19 - 120.
 // Each crystal should have a random hidden value between 1 - 12.
+
+// generate random number between 19-120
+var winCount;
+var lossCount;
+var crystalsArray = ['assets/images/blue.jpeg', 'assets/images/diamond.jpeg', 'assets/images/Emerald_Gem.png', 'assets/images/Ruby-stone.jpg'];
+var score;
+var target;
+
+function randomNumber() {
+  return Math.floor(Math.random() * 120 + 19);
+
+}
+
+//each crystal needs random number between 1-12
+function randomCrystal() {
+  return Math.floor(Math.random() * 12 + 1);
+}
+
+
